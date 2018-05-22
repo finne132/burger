@@ -1,0 +1,17 @@
+li {
+    padding: 15px;
+    margin: 15px;
+    background: #ffffff;
+    list-style: none;
+}
+  
+  html, body{
+      height: 100%;
+}
+  body { 
+      background-image: url(https://www.planwallpaper.com/static/images/cool-wallpapers-for-kids-high-definition-desktop-background-images-free_9q2bcvQ.jpg);
+      background-position: center center;
+      background-repeat:  no-repeat;
+      background-attachment: fixed;
+      background-size:  cover;
+}
