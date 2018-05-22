@@ -5,23 +5,19 @@ var orm = require("../config/orm.js");
 
 // call the ORM functions using burger specific input for the ORM
 var burger = {
-    selectAll: function(cb){
-      orm.selectAll('burgers', function(res){
+    all: function(cb) {
+      orm.all("burgers", function(res) {
         cb(res);
       });
     },
-    insertOne: function(val, cb){
-      orm.insertOne('burgers', 'burger_name', val, function(res){
+    // The variables cols and vals are arrays.
+    create: function(cols, vals, cb) {
+      orm.create("burgers", cols, vals, function(res) {
         cb(res);
       });
     },
-    updateOne: function(colVal, conditionVal, cb){
-      orm.updateOne('burgers', 'devoured', colVal, 'id', conditionVal, function(res){
-        cb(res);
-      });
-    },
-    deleteOne: function(conditionVal, cb){
-      orm.deleteOne('burgers', 'id', conditionVal, function(res){
+    update: function(objColVals, condition, cb) {
+      orm.update("burgers", objColVals, condition, function(res) {
         cb(res);
       });
     }
