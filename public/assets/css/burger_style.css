@@ -9,7 +9,7 @@ li {
       height: 100%;
 }
   body { 
-      background-image: url(https://www.planwallpaper.com/static/images/cool-wallpapers-for-kids-high-definition-desktop-background-images-free_9q2bcvQ.jpg);
+      background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/04/16/74/0458259b5038706.jpg);
       background-position: center center;
       background-repeat:  no-repeat;
       background-attachment: fixed;
@@ -37,4 +37,21 @@ h1 {
 
 h2 {
 	text-align: center;
+}
+.create-update-form {
+    padding: 25px;
+    margin: 25px;
+    background: #eceff1;
+    border: 1px black solid;
+}
+.form-group {
+    margin-bottom: 25px;
+  }
+.footer {
+	text-align: center;
+}
+
+.wrapper {
+	height: 100%; 
+	width: 100%; 
 }

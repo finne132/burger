@@ -2,8 +2,8 @@
 	<div class="row">
 	    <div class="center col-sm-12">
 			<img src="assets/img/burger.png" alt="Eat-Da-Burger App">
-	        <h1>Welcome to Joe's Shitty Burger Shack</h1>
-            <span>Home of the Shitty Burger!</span>
+	        <h1>Welcome to Joe's Custom Burger Shack</h1>
+            <span>Home of your favorite Burger!</span>
 	        <p></p>
 	    </div>
   	</div>
@@ -21,24 +21,28 @@
 			        <form action="/{{this.id}}?_method=PUT" method="POST">
 			          <input type="hidden" name="devoured" value="true">
                       <hr>
-			          <button class="btn-primary" type="submit">Eat that shit!</button>
+			          <button class="btn-primary" type="submit">Eat!</button>
 			        </form>
 			      </li>
 			    {{/unless}}
 			  {{/each}}
 			</ul>
+			<hr>
 	    </div>
 	    <div class="col-sm-6">
-			<h2>Burger Request History: Wow, you people eat some weird shit!</h2>
+			<hr>
+			<h2>Burger Request History</h2>
+			<span>Our customers eat some strange food!</span>
 			  {{#each burgers}}
 			    {{#if this.devoured}}
 			      <li>
 			      	Burger ID #: {{this.id}}
-                      <br>
+              <br>
 			        Burger Name: {{this.burger_name}}
 			      </li>
 			    {{/if}}
 			  {{/each}}
+				<hr>
 	    </div>
   	</div>
 	<div class="row">
