@@ -62,3 +62,7 @@ hr {
     background: #000;
     opacity: 0.6;
 }
+
+ul {
+    padding-left:0px;
+}
