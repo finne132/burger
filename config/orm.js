@@ -22,6 +22,26 @@ var orm ={
         if(err) throw err;
         callback(data);
         });
+    },
+
+    // update an existing burger to show that it was eaten
+    updateOne: function(table, col, colVal, condition, conditionVal, callback){
+        var queryString = 'UPDATE ' + table + ' SET ' + col + '=?' + 'WHERE ' + condition + '=?';
+
+        connection.query(queryString, [colVal, conditionVal], function(err, data){
+        if(err) throw err;
+        callback(data);
+        });
+    },
+
+    // delete an existing burger
+    deleteOne: function(table, condition, conditionVal, callback){
+        var queryString = 'DELETE FROM ' + table + ' WHERE ' + condition + '=?';
+
+        connection.query(queryString, [conditionVal], function(err, data){
+        if(err) throw err;
+        callback(data);
+        });
     }
 };
 
