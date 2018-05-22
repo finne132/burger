@@ -13,13 +13,16 @@ var connection = mysql.createConnection({
 });
 
 // initiate the connection
-connection.connect(function(err) {
-  if (err) {
-    console.error("The program encountered an error connecting to the database: " + err.stack);
-    return;
-  }
-  console.log("Successfully connected to the database with ID " + connection.threadId);
-});
+if(process.env.JAWSDB_URL){
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+  } else{
+    connection = mysql.createConnection({
+      host     : 'localhost',
+      user     : 'root',
+      password : '',
+      database : 'burgers_db'
+    });
+  };
 
 // export the connection for the ORM to use
 module.exports = connection;
