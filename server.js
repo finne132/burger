@@ -14,16 +14,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
 
-// Set Handlebars.
+// require handlebars
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Import routes and give the server access to them.
+// import routes and allow the server to use them
 var routes = require("./controllers/burgers_controller.js");
-
 app.use("/", routes);
 
+// listen on port 8080
 app.listen(port);
 console.log("the server has started and the app is listening. Open a web browser and navigate to localhost:8080 to view the app")
