@@ -5,7 +5,7 @@ var connection = require("../config/connection.js");
 
 // In the orm.js file, create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
 var orm ={
-    selectAll: function(table, callback){
+    all: function(table, callback){
       var queryString = 'SELECT * FROM ' + table;
   
       connection.query(queryString, function(err, data){
@@ -15,7 +15,7 @@ var orm ={
     },
 
     // insertOne function - create 1 new burger with the input parameters)
-    insertOne: function(table, column, burgerInput, callback){
+    create: function(table, column, burgerInput, callback){
         var queryString = 'INSERT INTO ' + table + '(' + column + ') VALUES (?)';
 
         connection.query(queryString, [burgerInput], function(err, data){
@@ -25,20 +25,10 @@ var orm ={
     },
 
     // update an existing burger to show that it was eaten
-    updateOne: function(table, col, colVal, condition, conditionVal, callback){
+    update: function(table, col, colVal, condition, conditionVal, callback){
         var queryString = 'UPDATE ' + table + ' SET ' + col + '=?' + 'WHERE ' + condition + '=?';
 
         connection.query(queryString, [colVal, conditionVal], function(err, data){
-        if(err) throw err;
-        callback(data);
-        });
-    },
-
-    // delete an existing burger
-    deleteOne: function(table, condition, conditionVal, callback){
-        var queryString = 'DELETE FROM ' + table + ' WHERE ' + condition + '=?';
-
-        connection.query(queryString, [conditionVal], function(err, data){
         if(err) throw err;
         callback(data);
         });
