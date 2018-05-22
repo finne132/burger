@@ -12,14 +12,18 @@ var orm ={
         if(err) throw err;
         callback(data);
       });
+    },
+
+    // insertOne function - create 1 new burger with the input parameters)
+    insertOne: function(table, column, burgerInput, callback){
+        var queryString = 'INSERT INTO ' + table + '(' + column + ') VALUES (?)';
+
+        connection.query(queryString, [burgerInput], function(err, data){
+        if(err) throw err;
+        callback(data);
+        });
     }
-}
-
-
-// selectAll()
-// insertOne()
-// updateOne()
-
+};
 
 // Export the ORM object in module.exports
 module.exports=orm;
